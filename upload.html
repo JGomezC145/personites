@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cargar item</title>
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="styles/Bootstrap/bootstrap.min.css">
+
+    <link rel="stylesheet" href="styles/center.css">
+</head>
+<body>
+    <!-- Headers -->
+    <header>
+        <div class="header-logo-primary">
+            <h1 class="logo-primary-red">T-L <span class="white">Panel</span></h1>
+        </div>
+        <center class="header-logo-center">
+            <h4 class="logo-white">Subir <span class="white-lime">Archivo</span></h4>
+            <button class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#request">Editar doc</button>
+        </center>
+        <div class="any">
+            <a class="headera" href="index.html"><h3>Regresar</h3></a>
+        </div>
+    </header>
+    <!-- Body -->
+
+    <div class="main">
+        <!-- <input type="file" id="imagepicker" onchange="cs(this.files[0])">
+        <div id="preview"></div> -->
+        <div class="containerr">
+            <div class="imagesdiv" id="imagess">
+                <div class="storvo" style="height: 120px;"></div>
+                <center><h2 style="color: var(--main-text-white)">Configurar imagen</h2></center>
+                
+                <center>
+                    <div class="mb-3">
+                        <input type="file" accept="image/*" class="form-control" id="imagepicker">                       
+                      </div>
+                </center>
+                <center class="divprevi">
+                    <div id="preview">waiting for image</div>
+                </center>
+                <br>
+                <center>
+                    <!-- <progress value="23" min="0" max="100">
+
+                    </progress> -->
+                    <div id="divpro" class="progress defa">
+                        <div id="progressi" class="progress-bar success" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+                    </div>
+                    <button id="cargarfoto" class="btn btn-success" onclick="tete()">Cargar foto</button>
+                    <input id="imgSource" disabled style="text-align: center;" placeholder="IMG URL" type="text">
+                    <button id="openvideo" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#videopanel">Abrir panel de video</button>
+                </center>
+                
+            </div>
+            <div class="ship">.</div>
+            <div class="informationdiv" id="information">
+                <div class="storvo2" style="height: 120px;"></div>
+                <center><h2 style="color: var(--main-text-white)">Informacion del item</h2></center>
+                <form id="formis" class="upload-data container">
+
+                    <div class="form-floating mb-3">
+                        <input required autocomplete="off" type="text" class="form-control" id="artitle" placeholder="Titulo del item">
+                        <label for="artitle" style="color: #6c757d;">Titulo del item</label>
+                    </div>
+
+                    <!-- <label for="artitle">Titulo del item</label><br>
+                    <input autocomplete="off" required class="input" type="text" placeholder="Nombre del item" id="artitle">
+                    <br> -->
+
+                    <div id="codecont" class="form-floating mb-3">
+                        <input autocomplete="off" required class="form-control" type="text" placeholder="Código del item" id="arcode">
+                        <label style="color: #6c757d;" for="arcode">Código del item</label>
+                    </div>
+                    <div id="errbox" class="mb-2 text-danger bg-light rounded d-none align-middle"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:rgba(0, 0, 0, 1);"><path d="M11.001 10H13.001V15H11.001zM11 16H13V18H11z"></path><path d="M13.768,4.2C13.42,3.545,12.742,3.138,12,3.138s-1.42,0.407-1.768,1.063L2.894,18.064 c-0.331,0.626-0.311,1.361,0.054,1.968C3.313,20.638,3.953,21,4.661,21h14.678c0.708,0,1.349-0.362,1.714-0.968 c0.364-0.606,0.385-1.342,0.054-1.968L13.768,4.2z M4.661,19L12,5.137L19.344,19H4.661z"></path></svg><p>xd?</p></div>
+
+                    <div class="form-floating mb-3">
+                        <textarea class="form-control" autocomplete="off" required id="ardesc" cols="30" rows="9" placeholder="Descripción del item"></textarea>
+                        <label style="color: #6c757d;" for="ardesc">Descripción del item</label>
+                    </div>
+                    
+                    
+                    <div class="input-group">
+                       
+                        
+                        <div class="form-floating">
+                            <input class="form-control" type="text" autocomplete="off" required placeholder="Tag" id="arprice">
+                            <label style="color: #6c757d;" for="arprice">Tag</label>
+                        </div>
+                    </div> 
+
+                    <br>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" value="" id="arvisible" checked>
+                        <label class="form-check-label" for="arvisible">
+                          Visible para el publico
+                        </label>
+                    </div>
+
+                    <br>
+                    <!-- <div class="price" style="display: flex;">
+                        <p style="margin-right: 5px; margin-top: auto; margin-bottom: auto;">₡</p>
+                    </div> -->
+                    
+                    <button class="btn btn-primary" type="submit">Cargar datos</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Components -->
+    <div class="position-fixed bottom-0 end-0 p-3 toast-container" style="z-index: 11">
+        <div class="toast hide align-items-center text-white bg-primary border-0" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+              <div class="toast-body">
+                Hello, world! Define this text.
+              </div>
+              <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="videopanel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Añadir video</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <center>
+                    <div class="mb-3">
+                        <input type="file" accept="video/*" class="form-control" id="videopicker">                       
+                      </div>
+                </center>
+                <center class="divprevi">
+                    <div id="previevideo">waiting for video...</div>
+                </center>
+                <br>
+                <center>
+                    <!-- <progress value="23" min="0" max="100">
+
+                    </progress> -->
+                    <div id="divprov" class="progress defa">
+                        <div id="vidprogressi" class="progress-bar success" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+                    </div>
+                </center>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" onclick="vide()">Cargar video</button>
+              <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="request" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" style="color: #161616;" id="exampleModalLabel">Editar documento existente</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p style="color: #262627;">Escribe el codigo del item a editar</p>
+              <form id="requestdoc">
+                <div class="form-floating mb-3">
+                    <input autocomplete="off" required class="form-control" type="text" placeholder="Escribe el Codigo del item" id="requester">
+                    <label style="color: #6c757d;" for="requester">Código del item</label>
+                </div>
+                <button class="btn btn-primary" id=pibeedit type="submit">Editar</button>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+              <button type="button" class="btn btn-primary" onclick="document.getElementById('pibeedit').click();">Save changes</button>
+            </div>
+          </div>
+        </div>
+    </div>
+      
+
+    <!-- scripts -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-storage.js"></script>
+    <script src="code/fbcode.js"></script>
+
+    <script src="code/extra/moment.min.js"></script>
+    <script src="code/extra/momentsetES.js"></script>
+    <script src="code/Bootstrap/bootstrap.min.js"></script>
+    <script src="code/upload.js"></script>
+</body>
+</html>

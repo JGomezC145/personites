@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Album de personitas</title>
+    <link rel="stylesheet" href="styles/center.css">
+    <link rel="stylesheet" href="styles/Bootstrap/bootstrap.min.css">
+    <link rel="shortcut icon" href="log.jpg" type="image/x-icon">
+</head>
+<body>
+    <!-- Headers -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="assets/log.jpg" alt="logo" width="50px" height="50px">
+            </a>
+            <a class="navbar-brand" href="#">Album, by JGomezC</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" >Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="verlinkk" href="ver.html">Ver item</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="uploadlink" href="upload.html">Upload</a>
+                </li>
+                </ul>
+                <form id="search" class="d-flex">
+                    <input id="searchode" class="form-control me-2" type="search" placeholder="Escribe el codigo" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Ver</button>
+                </form>
+                <!-- <span class="navbar-text">
+                Navbar text with an inline element
+                </span> -->
+            </div>
+        </div>
+    </nav>
+    <!-- Body -->
+        <div class="container">
+            <style>
+            #wrap {
+                margin-top: 250px;
+                position: relative;
+                margin: auto;
+                width: 100px;
+                height: 100px;
+                top: 170px;
+            }
+
+            .box {
+                position: absolute;
+                background: #9e957b;
+                width: 150px;
+                height: 20px;
+                border-radius: 15px;
+                margin: auto;
+            }
+
+            .ball {
+                position: absolute;
+                left: 60px;
+                top: -29px;
+                background: #c20843;
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+            }
+            </style>
+            <div id="wrap" width="auto" >
+                <div class="box"></div>
+                <p id="loadingpp" style="color: var(--main-text-white)" width="auto">Cargando...</p>
+                <div class="ball"></div>
+              </div>
+            <div id="maincontainer" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                <!-- <div class="col">
+                    <div class="card shadow-sm">
+                      <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+          
+                      <div class="card-body">
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                          <div class="btn-group">
+                            <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                            <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                          </div>
+                          <small class="text-muted">9 mins</small>
+                        </div>
+                      </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+
+    <!-- COMPONENTS -->
+
+    <div class="modal fade" id="showphoto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" style="color: #161616;" id="exampleModalLabel">Ver foto</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <img id="imgshow" class="img-responsive img-fluid rounded" src="_">
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <!-- loading script -->
+        <script src="code/extra/gsap.min.js"></script>
+        <script src="code/extra/CustomEase3.min.js"></script>        
+        <script src="code/animation.js"></script>
+    <!-- Scripts -->
+        
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-storage.js"></script>
+    <script src="code/fbcode.js"></script>
+    
+    <script src="code/extra/moment.min.js"></script>
+    <script src="code/extra/momentsetES.js"></script>
+    <script src="code/Bootstrap/bootstrap.min.js"></script>
+    <script src="code/index_get().js"></script>
+
+        
+</body>
+</html>

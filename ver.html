@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ver documento</title>
+    <link rel="stylesheet" href="styles/center.css">
+    <link rel="shortcut icon" href="log.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="styles/Bootstrap/bootstrap.min.css">
+    <style>
+        .simple {
+            height: auto;
+            width: 100%;
+
+            /* dev */
+            background-color: coral;
+        }
+        @media screen and (max-width:420px){
+            .simple {
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADERS -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="assets/log.jpg" alt="logo" width="30px" height="30px">
+            </a>
+            <a class="navbar-brand" href="#">Ver persona</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page">Ver item</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="upload.html">Upload</a>
+                </li>
+                </ul>
+                <form id="search" class="d-flex">
+                    <input class="form-control me-2" id="searchode" type="search" placeholder="Escribe el codigo" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Ver</button>
+                </form>
+                <!-- <span class="navbar-text">
+                Navbar text with an inline element
+                </span> -->
+            </div>
+        </div>
+    </nav>
+
+    <!-- MAIN -->
+
+    <div class="simple d-flex justify-content-center" id="simple">
+        
+    </div>
+
+    <!-- SCRIPTS -->
+
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-storage.js"></script>
+    <script src="code/fbcode.js"></script>
+
+    <script src="code/extra/moment.min.js"></script>
+    <script src="code/extra/momentsetES.js"></script>
+    <script src="code/Bootstrap/bootstrap.min.js"></script>
+    <script src="code/ver_load&get.js"></script>
+</body>
+</html>
