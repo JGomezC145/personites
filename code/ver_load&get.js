@@ -7,7 +7,7 @@ function system() {
     if (tries === 2) {
         window.location = 'index.html'
     } else {
-        if (hash === "" || hash === null) {
+        if (hash === "" || hash === "null") {
             tries = tries + 1;
             var newhash = prompt("Ingresa el codigo del item")
             window.location.hash = newhash;
